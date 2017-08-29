@@ -8,6 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>About!</h1>
+<ul>
+    @foreach ($tasks as $task)
+        <li>
+            <h2>{{ $task->title }}</h2>
+            <span>{{ $task->body }}</span>
+        </li>
+    @endforeach
+</ul>
+
 </body>
 </html>
