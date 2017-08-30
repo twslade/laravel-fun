@@ -11,4 +11,20 @@
             <li>Wind Direction: <b>{{ $report->wind_direction  }}</b></li>
             <img src="{{ $report->picture  }}" alt="Surf Report Pic">
         </ul>
+
+
+        @if(count($report->pics) > 0)
+            <div class="comments">
+            <h4>User pics</h4>
+                <ul class="list-group">
+                @foreach($report->pics as $pic)
+                    <li class="list-group-item">
+                        <strong>{{ $pic->created_at->diffForHumans() }}: </strong>
+                        {{ $pic->comment }}</li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
+
+
     </div><!-- /.blog-post -->
