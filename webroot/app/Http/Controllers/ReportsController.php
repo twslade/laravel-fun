@@ -9,7 +9,8 @@ class ReportsController extends Controller
 {
     public function index()
     {
-        return view('reports.index');
+        $reports = Report::orderBy('created_at', 'desc')->get();
+        return view('reports.index', compact('reports'));
     }
 
     public function create()
@@ -46,6 +47,6 @@ class ReportsController extends Controller
 
     public function show(Report $report)
     {
-        return view('reports.index', compact('report'));
+        return view('reports.show', compact('report'));
     }
 }

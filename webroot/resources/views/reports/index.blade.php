@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
-    @include('reports.report')
-
+    @foreach($reports as $report)
+        @include('reports.report')
+    @endforeach
 @endsection
