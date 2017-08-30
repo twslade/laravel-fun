@@ -46,6 +46,6 @@ class ReportsController extends Controller
 
     public function show(Report $report)
     {
-        return view('reports.show', compact('report'));
+        return view('reports.index', compact('report'));
     }
 }
