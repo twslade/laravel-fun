@@ -10,27 +10,34 @@
 
 <body>
 
+@include('layouts.nav')
+
 <div class="container">
 
-    @include('layouts.nav')
+    <div class="blog-header">
+        <h1 class="blog-title">Folly Beach Surf Report</h1>
+        <p class="lead blog-description">We have waves...sometimes</p>
+    </div>
 
-    @yield('content')
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Folly Beach Surf Report</h1>
-            <p class="lead text-muted">We have waves...somtimes</p>
-            <p>
-                <a href="#" class="btn btn-primary">View Today's Report</a>
-            </p>
-        </div>
-    </section>
+        <div class="row">
 
+            <div class="col-sm-8 blog-main">
+
+                @yield('content')
+
+                @include('layouts.pager')
+
+            </div><!-- /.blog-main -->
+            @include('layouts.sidebar')
+
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
 
     <footer>
         @yield('footer')
     </footer>
 
-</div>
 </body>
 </html>
