@@ -26,5 +26,19 @@
             </div>
         @endif
 
+        <div class="card">
+            <div class="card-block">
+                <form method="post" action="/reports/{{ $report->id }}/pic/" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="pic">
+                        <textarea name="comment" id="" placeholder="Your comments here" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" value="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
     </div><!-- /.blog-post -->
